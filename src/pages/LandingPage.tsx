@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
 import { Heart, Search, ShoppingBag, User } from "lucide-react"
+import banner from "../assets/banner.jpeg"
+import Button from "../ui/Button"
 
 
 function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b">
+      <header className="border-b sticky transition-all ease-in-out delay-500 duration-500 bg-white top-0 left-0 w-full z-50">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <Link to="/" className="text-2xl font-bold">
@@ -68,20 +70,18 @@ function LandingPage() {
       <main>
         {/* Hero Banner */}
         <div className="relative h-[500px] bg-gray-100 flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20" /> */}
+          <img src={banner} alt="" className="absolute inset-0 h-full object-cover w-full brightness-90" />
           <div className="relative text-center text-white px-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">SUMMER SALE</h1>
             <p className="text-xl md:text-2xl mb-8">Up to 50% off thousands of styles</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-white text-black hover:bg-gray-100">
-                SHOP WOMEN
-              </button>
-              <button className="bg-white text-black hover:bg-gray-100">
-                SHOP MEN
-              </button>
+                <Button to="/women">SHOP WOMEN</Button>
+                <Button to="/men">SHOP MEN</Button>
             </div>
           </div>
         </div>
+        
 
         {/* Featured Products */}
         <div className="py-12 bg-white">
@@ -183,3 +183,9 @@ function LandingPage() {
 }
 
 export default LandingPage
+
+
+
+// for the video
+
+{/* <video loop={true} autoPlay poster="https://content.asos-media.com/-/media/homepages/ww/2025/april/14-gbl/hero/ww_bank_holiday_edit_hero_app_still_870x1110.jpg" src="https://www.asos-video.com/video/upload/f_auto,q_auto:good/BEACH%20CLUB%20-%20HOMEPAGE%20MOBILE%20870x1110_sbrwe7.mov"></video> */}
